@@ -9,7 +9,7 @@
 # # # # # # # USER FAQ # # # # # # #
 # HELLO USER!
 # PLEASE CHOOSE A DIRECTORY WHERE Python WILL BE INSTALLED
-ROOT_DIRECTORY=~/.testdev
+ROOT_DIRECTORY=~/dev
 
 
 
@@ -99,7 +99,8 @@ printf "\n     ===============  machine info  ===============     \n"
 Kernel=$(uname -s)
 case "$Kernel" in
     Linux)
-        Kernel="linux"
+        Kernel=$(lsb_release -si)
+        Kernel=${Kernel,,}
         INSTALL_PIP_FLAG=true
 
         # set the install directory
